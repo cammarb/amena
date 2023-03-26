@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
@@ -14,10 +13,11 @@ import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 
-const router = createBrowserRouter([
+const routes: RouteObject[] = [
   {
     path: "/",
     element: <Root />,
+    errorElement: <Error_404 />,
     children: [
       {
         index: true,
@@ -35,13 +35,11 @@ const router = createBrowserRouter([
         path: "cart",
         element: <Cart />,
       },
-      {
-        path: "*",
-        element: <Error_404 />,
-      },
     ],
   },
-]);
+];
+
+const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <RouterProvider router={router} />
