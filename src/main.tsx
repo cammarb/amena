@@ -7,6 +7,7 @@ import {
 import "./index.css";
 import Root from "./layouts/Root";
 import Error_404 from "./pages/404";
+import About from "./pages/About";
 import Account from "./pages/Account";
 
 import Cart from "./pages/Cart";
@@ -27,6 +28,10 @@ const routes: RouteObject[] = [
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "about",
+        element: <About />,
       },
       {
         path: "account",
