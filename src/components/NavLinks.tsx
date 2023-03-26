@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
 type Props = {
+  key: string;
   url: string;
   name: string;
-  click: React.MouseEventHandler;
+  click?: React.MouseEventHandler;
 };
 
 const NavLinks = (props: Props) => {
