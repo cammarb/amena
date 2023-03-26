@@ -12,6 +12,7 @@ import Account from "./pages/Account";
 import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import Menu from "./pages/Menu";
 
 const routes: RouteObject[] = [
   {
@@ -34,6 +35,10 @@ const routes: RouteObject[] = [
       {
         path: "cart",
         element: <Cart />,
+      },
+      {
+        path: "menu",
+        element: <Menu />,
       },
     ],
   },
