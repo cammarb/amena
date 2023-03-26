@@ -2,8 +2,33 @@ import React, { useState } from "react";
 import { HiOutlineShoppingCart, HiUser } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { HiOutlineBars3, HiOutlineXMark } from "react-icons/hi2";
+import NavLinks from "./NavLinks";
 
 type Props = {};
+
+interface ILink {
+  name: string;
+  url: string;
+}
+
+const links: ILink[] = [
+  {
+    name: "Menu",
+    url: "menu",
+  },
+  {
+    name: "Nosotros",
+    url: "about",
+  },
+  {
+    name: "Contacto",
+    url: "contact",
+  },
+  {
+    name: "Terminos y Condiciones",
+    url: "terms",
+  },
+];
 
 const Navbar = (props: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -31,12 +56,15 @@ const Navbar = (props: Props) => {
         className="py-4 px-4 grid grid-flow-row gap-4"
         style={isOpen ? { display: "grid" } : { display: "none" }}
       >
-        <Link to={"/contact"} onClick={() => setIsOpen(false)}>
-          Contacto
-        </Link>
-        <Link to={"/terms"} onClick={() => setIsOpen(false)}>
-          Terminos y Condiciones
-        </Link>
+        {links.map((link) => {
+          return (
+            <NavLinks
+              url={link.url}
+              name={link.name}
+              click={() => setIsOpen(false)}
+            />
+          );
+        })}
       </div>
     </>
   );
