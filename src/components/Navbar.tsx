@@ -27,7 +27,6 @@ const links: ILink[] = [
 ];
 
 const Navbar = (props: Props) => {
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
