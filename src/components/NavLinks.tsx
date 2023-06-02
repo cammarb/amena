@@ -1,3 +1,4 @@
+import { Link as FluentLink } from "@fluentui/react-components";
 import { Link } from "react-router-dom";
 
 type Props = {
